@@ -7,7 +7,6 @@
     {% include 'header.html' %}
     <div class="container-fluid page-body-wrapper">
        {% include 'sidebar.html' %}
-
       <div class="main-panel">
         <div class="content-wrapper">
             <div class="form-group">
@@ -363,6 +362,14 @@
 {% block js %}
 {{super() }}
   <link rel="stylesheet" href="{{ url_for('static', filename='js/select2.js') }}">
+<script type="text/javascript">
+document.getElementById('select-all').onclick = function() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+    }
+}
+</script>
 
 {% endblock %}
 {% endblock %}

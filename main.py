@@ -30,6 +30,6 @@ def learners():
 def addlearner():
     return render_template('addlearner.html')
 
-@app.route("/adddetails")
-def adddetails():
-    return render_template('adddetails.html')
+@app.route("/applicants")
+def applicants():
+    return render_template('applicants.html')

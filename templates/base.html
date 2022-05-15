@@ -47,14 +47,6 @@
   <!-- Custom js for this page-->
           <script src="{{url_for('static',filename='js/dashboard.js')}}"></script>
           <script src="{{url_for('static',filename='js/Chart.roundedBarCharts.js')}}"></script>
-<script type="text/javascript">
-document.getElementById('select-all').onclick = function() {
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    for (var checkbox of checkboxes) {
-        checkbox.checked = this.checked;
-    }
-}
-</script>
 
 {% endblock %}
 
