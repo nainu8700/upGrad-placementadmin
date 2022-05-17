@@ -103,51 +103,53 @@
                            <div class="modal-body">
                           <form class="form-sample">
                     <p class="card-description">
-                      Personal info
+                      Drive Info
                     </p>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">First Name</label>
+                          <label class="col-sm-3 col-form-label">Job Title</label>
                           <div class="col-sm-9">
                             <input type="text" class="form-control" />
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Last Name</label>
+                          <label class="col-sm-3 col-form-label">Primary Skill</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" />
+                            <div class="form-check">
+                              <div class="row d-flex justify-content-center mt-100">
+                                <div class="container">
+                                  <div class="form_label">
+                                    <span class="form_text">Enter Skills</span>
+                                    <div class="multiselect_block">
+                                      <label for="select-2" class="field_multiselect">Skills</label>
+                      
+                                      <input id="checkbox-2" class="multiselect_checkbox" type="checkbox">
+                                      <label for="checkbox-2" class="multiselect_label"></label>
+                      
+                                      <select id="select-2" class="field_select" name="frameworks" multiple style="@media (min-width: 768px) { height: calc(4 * 38px)}">
+                                        <option value="React">React</option>
+                                        <option value="Django">Django</option>
+                                        <option value="ML">ML</option>
+                                        <option value="Nextjs">Nextjs</option>
+                                      </select>
+                                      <span class="field_multiselect_help">You can select several items by pressing <b>Ctrl(or Command)+Element</b></span>
+                                    </div>
+                                    <span class="error_text"></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-12">  
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Gender</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>Male</option>
-                              <option>Female</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Date of Birth</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" placeholder="dd/mm/yyyy"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Category</label>
+                          <label class="col-sm-3 col-form-label">Role Filter</label>
                           <div class="col-sm-9">
                             <select class="form-control">
                               <option>Category1</option>
@@ -158,86 +160,34 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Membership</label>
-                          <div class="col-sm-4">
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
-                                Free
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-sm-5">
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
-                                Professional
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="card-description">
-                      Address
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 1</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">State</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 2</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Postcode</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">City</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Country</label>
+                          <label class="col-sm-3 col-form-label">Vacancies</label>
                           <div class="col-sm-9">
                             <select class="form-control">
-                              <option>America</option>
-                              <option>Italy</option>
-                              <option>Russia</option>
-                              <option>Britain</option>
+                              <option>Category1</option>
+                              <option>Category2</option>
+                              <option>Category3</option>
+                              <option>Category4</option>
                             </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Min CTC and Max CTC</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Location</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" />
                           </div>
                         </div>
                       </div>
