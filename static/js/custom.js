@@ -22,3 +22,11 @@ multiselect_block.forEach((parent) => {
     }
   });
 });
+
+$('select').selectpicker();
+console.log('hello')
+
+
+$(document).ready(function() {
+  $('#example-getting-started').multiselect();
+});
