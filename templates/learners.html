@@ -1,402 +1,412 @@
 {% extends 'base.html' %}
 {% block style %}
-  {{ super() }}
+{{ super() }}
 {% endblock %}
-{% block  content %}
-  <div class="container-scroller">
-    {% include 'header.html' %}
-    <div class="container-fluid page-body-wrapper">
-       {% include 'sidebar.html' %}
+{% block content %}
+<div class="container-scroller">
+  {% include 'header.html' %}
+  <div class="container-fluid page-body-wrapper">
+    {% include 'sidebar.html' %}
 
-      <div class="main-panel">
-        <div class="content-wrapper">
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-4">
-                            <select class="form-control-sm " style="border:none;background:transparent;">
-                              <option value="" selected disabled hidden>Bulk Action</option>
-                              <option value="Cold">Placed</option>
-                              <option value="">Unplaced</option>
-                              <option value="">Delete</option>
-                              <option value="">Debar</option>
-                            </select>
-                            <button type="button" class="btn btn-dark btn-sm">Apply</button>
-                          </div>
-                <div class="col-sm-8">
-                <a href="#">
-                    <button type="button" class="btn float-right mr-3 btn-outline-primary btn-icon-text btn-sm" data-toggle="modal" data-target="#exampleModal">
-                      <i class="ti-export btn-icon-prepend"></i>
-                        Export
-                    </button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Export learner data</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body text-danger">
-                              Are you sure you want to export the data?
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                              <button type="button" class="btn btn-primary">Yes</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </a>
-                <a href="{{url_for('addlearner')}}">
-                    <button type="button" class="btn float-right mr-3 btn-outline-primary btn-icon-text btn-sm">
-                      <i class="ti-plus btn-icon-prepend"></i>
-                        Add New
-                    </button>
-                </a>
-                  <button type="button" class="btn float-right mr-3 btn-outline-primary btn-icon-text btn-sm" data-toggle="modal" data-target="#importModal">
-              <i class="ti-import  btn-icon-prepend"></i>
-                Import
-            </button>
-                  <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="importModalLabel">Import learner data</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body ">
-                              <p>Download Sample file from <a href="#">here</a></p>
-                              <label for="input-folder-3">Select file (only csv/ excel file)</label>
-                              <div class="file-loading">
-                                  <input id="input-folder-3" name="input-folder-3[]" type="file" multiple>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-              </div>
-              </div>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <select class="form-control-sm " style="border:none;background:transparent;">
+                <option value="" selected disabled hidden>Bulk Action</option>
+                <option value="Cold">Placed</option>
+                <option value="">Unplaced</option>
+                <option value="">Delete</option>
+                <option value="">Debar</option>
+              </select>
+              <button type="button" class="btn btn-dark btn-sm">Apply</button>
             </div>
-          <div class="col-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <h4 class="card-title ml-2">Filter Learners</h4>
-                  <button type="button" class="btn btn-link pt-0" data-toggle="modal" data-target=".bd-example-modal-xl">Advanced Search</button>
-                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                          <h5 class="modal-title bd-example-modal-xl">Advanced Filter Form</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                           <div class="modal-body">
-                          <form class="form-sample">
-                    <p class="card-description">
-                      Personal info
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">First Name</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
+            <div class="col-sm-8">
+              <a href="#">
+                <button type="button" class="btn float-right mr-3 btn-outline-primary btn-icon-text btn-sm"
+                  data-toggle="modal" data-target="#exampleModal">
+                  <i class="ti-export btn-icon-prepend"></i>
+                  Export
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Export learner data</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Last Name</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
+                      <div class="modal-body text-danger">
+                        Are you sure you want to export the data?
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Gender</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>Male</option>
-                              <option>Female</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Date of Birth</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" placeholder="dd/mm/yyyy"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Category</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>Category1</option>
-                              <option>Category2</option>
-                              <option>Category3</option>
-                              <option>Category4</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Membership</label>
-                          <div class="col-sm-4">
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
-                                Free
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-sm-5">
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
-                                Professional
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="card-description">
-                      Address
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 1</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">State</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 2</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Postcode</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">City</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Country</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>America</option>
-                              <option>Italy</option>
-                              <option>Russia</option>
-                              <option>Britain</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                        </div>
-                           <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-                          <button type="button" class="btn btn-primary">Filter</button>
-                        </div>
-                        </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-primary">Yes</button>
                       </div>
                     </div>
                   </div>
-                  <form class="form-inline">
-                    <div class="form-group">
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option value="" selected disabled hidden>Campaign</option>
-                              <option value="Yes">B2B</option>
-                              <option value="No">B2C</option>
-                            </select>
-                          </div>
-                        </div>
-                    <div class="form-group">
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option value="" selected disabled hidden>Placement Mentor</option>
-                              <option value="Kriti">Kriti</option>
-                              <option value="Kushmarkar">Kushmarkar</option>
-                            </select>
-                          </div>
-                        </div>
-                     <div class="form-group">
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option value="" selected disabled hidden>Placement status</option>
-                              <option value="Placed">Placed</option>
-                              <option value="Unplaced">Unplaced</option>
-                              <option value="Notinterested">Not Interested</option>
-                            </select>
-                          </div>
-                        </div>
-                    <div class="form-group">
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option value="" selected disabled hidden>Internships?</option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                        </div>
-                    <div class="form-group">
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option value="" selected disabled hidden>Non Tech?</option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                        </div>
-                    <button type="submit" class="btn btn-primary mb-2">Filter</button>
-                  </form>
+                </div>
+              </a>
+              <a href="{{url_for('addlearner')}}">
+                <button type="button" class="btn float-right mr-3 btn-outline-primary btn-icon-text btn-sm">
+                  <i class="ti-plus btn-icon-prepend"></i>
+                  Add New
+                </button>
+              </a>
+              <button type="button" class="btn float-right mr-3 btn-outline-primary btn-icon-text btn-sm"
+                data-toggle="modal" data-target="#importModal">
+                <i class="ti-import  btn-icon-prepend"></i>
+                Import
+              </button>
+              <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="importModalLabel">Import learner data</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body ">
+                      <p>Download Sample file from <a href="#">here</a></p>
+                      <label for="input-folder-3">Select file (only csv/ excel file)</label>
+                      <div class="file-loading">
+                        <input id="input-folder-3" name="input-folder-3[]" type="file" multiple>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
                 </div>
               </div>
+
             </div>
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Learners</h4>
-                  <p class="card-description">
-                    All the Learner Details will be visible here.
-                  </p>
-                  <div class="table-responsive pt-3">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th><input type="checkbox" name="drive" id="select-all"></th>
-                          <th>Email id</th>
-                          <th>Name</th>
-                          <th>Phone number</th>
-                          <th>Placement status</th>
-                          <th>Cohort</th>
-                          <th>Passout year</th>
-                          <th>Total Drives</th>
-                          <th>Relevant Drives</th>
-                          <th>Relevant Drives Applied</th>
-                          <th>Non-Relevant Drives</th>
-                          <th>Non-Relevant Drives Applied</th>
-                          <th>learner Remarks</th>
-                           <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td >
-                            <input type="checkbox" name="drive">
-                          </td>
-
-                          <td class="post-title column-title column-primary mr-5 ">
-                           nainu1.wadhwa@upgrad.com
-                             <div class="row-actions mt-2">
-                                <span> <a class="text-primary">Edit</a>  | </span>
-                             <span><a class="text-success">View</a> </span>
-                             <!--   <span><a class="text-danger">Delete</a> </span>-->
+          </div>
+        </div>
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <h4 class="card-title ml-2">Filter Learners</h4>
+                <button type="button" class="btn btn-link pt-0" data-toggle="modal"
+                  data-target=".bd-example-modal-xl">Advanced Search</button>
+                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
+                  aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title bd-example-modal-xl">Advanced Filter Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-sample">
+                          <p class="card-description">
+                            Drive Info
+                          </p>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Job Title</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
                             </div>
-                          </td>
-                          <td>
-                            Nainu Wadhwa
-                          </td>
-                          <td>
-                            9518260673
-                          </td>
-                          <td>
-                            Unplaced
-                          </td>
-                          <td>
-                            3069
-                          </td>
-                          <td>
-                            2021
-                          </td>
-
-                          <td>
-                            23
-                          </td>
-
-                          <td>
-                            20
-                          </td>
-                          <td>
-                            12
-                          </td>
-                          <td>
-                            3
-                          </td>
-                          <td>
-                            0
-                          </td>
-                          <td>
-                            good candidate
-                          </td>
-                          <td><label class="badge badge-danger">Active</label></td>
-                        </tr>
-
-                      </tbody>
-                    </table>
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Company Name</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Application Count</label>
+                                <div class="col-sm-9">
+                                  <input type="number" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Vacancies</label>
+                                <div class="col-sm-9">
+                                  <input class="form-control" placeholder="" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Status</label>
+                                <div class="col-sm-9">
+                                  <select class="form-control">
+                                    <option>Category1</option>
+                                    <option>Category2</option>
+                                    <option>Category3</option>
+                                    <option>Category4</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Location</label>
+                                <div class="col-sm-9">
+                                  <div class="form-check">
+                                    <div class="row d-flex justify-content-center mt-100">
+                                      <div class="container">
+                                        <div class="form_label">
+                                          <span class="form_text">Enter location</span>
+                                          <div class="multiselect_block">
+                                            <label for="select-2" class="field_multiselect">Location</label>
+                            
+                                            <input id="checkbox-2" class="multiselect_checkbox" type="checkbox">
+                                            <label for="checkbox-2" class="multiselect_label"></label>
+                            
+                                            <select id="select-2" class="field_select" name="frameworks" multiple style="@media (min-width: 768px) { height: calc(4 * 38px)}">
+                                              <option value="Dehi">Dehi</option>
+                                              <option value="Mumbai">Mumbai</option>
+                                              <option value="Banglore">Banglore</option>
+                                              <option value="Pune">Pune</option>
+                                            </select>
+                                            <span class="field_multiselect_help">You can select several items by pressing <b>Ctrl(or Command)+Element</b></span>
+                                          </div>
+                                          <span class="error_text"></span>
+                                        </div>
+                                        
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <p class="card-description">
+                      Address
+                    </p> -->
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Job Type</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Domain</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Package (min,max)</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">min exp</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">max exp</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">jd remarks</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+                        <button type="button" class="btn btn-primary">Filter</button>
+                      </div>
+                    </div>
                   </div>
+                </div>
+              </div>
+              <form class="form-inline">
+                <div class="form-group">
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option value="" selected disabled hidden>Campaign</option>
+                      <option value="Yes">B2B</option>
+                      <option value="No">B2C</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option value="" selected disabled hidden>Placement Mentor</option>
+                      <option value="Kriti">Kriti</option>
+                      <option value="Kushmarkar">Kushmarkar</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option value="" selected disabled hidden>Placement status</option>
+                      <option value="Placed">Placed</option>
+                      <option value="Unplaced">Unplaced</option>
+                      <option value="Notinterested">Not Interested</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option value="" selected disabled hidden>Internships?</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option value="" selected disabled hidden>Non Tech?</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Filter</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Learners</h4>
+                <p class="card-description">
+                  All the Learner Details will be visible here.
+                </p>
+                <div class="table-responsive pt-3">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th><input type="checkbox" name="drive" id="select-all"></th>
+                        <th>Email id</th>
+                        <th>Name</th>
+                        <th>Phone number</th>
+                        <th>Placement status</th>
+                        <th>Cohort</th>
+                        <th>Passout year</th>
+                        <th>Total Drives</th>
+                        <th>Relevant Drives</th>
+                        <th>Relevant Drives Applied</th>
+                        <th>Non-Relevant Drives</th>
+                        <th>Non-Relevant Drives Applied</th>
+                        <th>learner Remarks</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input type="checkbox" name="drive">
+                        </td>
+
+                        <td class="post-title column-title column-primary mr-5 ">
+                          nainu1.wadhwa@upgrad.com
+                          <div class="row-actions mt-2">
+                            <span> <a class="text-primary">Edit</a> | </span>
+                            <span><a class="text-success">View</a> </span>
+                            <!--   <span><a class="text-danger">Delete</a> </span>-->
+                          </div>
+                        </td>
+                        <td>
+                          Nainu Wadhwa
+                        </td>
+                        <td>
+                          9518260673
+                        </td>
+                        <td>
+                          Unplaced
+                        </td>
+                        <td>
+                          3069
+                        </td>
+                        <td>
+                          2021
+                        </td>
+
+                        <td>
+                          23
+                        </td>
+
+                        <td>
+                          20
+                        </td>
+                        <td>
+                          12
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          0
+                        </td>
+                        <td>
+                          good candidate
+                        </td>
+                        <td><label class="badge badge-danger">Active</label></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
-  </div>
+</div>
 {% block js %}
 {{super() }}
-  <link rel="stylesheet" href="{{ url_for('static', filename='js/select2.js') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='js/select2.js') }}">
 
 {% endblock %}
 {% endblock %}
